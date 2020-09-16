@@ -8,8 +8,17 @@ import { Weather } from 'src/services/weather.model';
 })
 export class MainWidgetComponent implements OnInit {
   @Input() weather: Weather;
-  
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  iconType(status: string) {
+    switch (status) {
+      case 'Sunny':
+        return 'wb_sunny';
+      default:
+        return 'wb_cloudy';
+    }
+  }
 }

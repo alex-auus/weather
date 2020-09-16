@@ -34,7 +34,7 @@ namespace weather.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)],
                 Humidity = 0.68,
                 Location = "Brisbane",
-                Status = "Sunny",
+                Status = rng.Next(0, 2) == 0 ? "Sunny" : "Cloudy",
                 UVIndex = 0,
                 Visibility = 4
             };

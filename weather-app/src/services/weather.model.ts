@@ -6,6 +6,6 @@ export interface Weather {
   location: string;
   status: string;
   humidity: string;
-  visibilty: string;
-  UVIndex: string;
+  visibility: string;
+  uvIndex: string;
 }
