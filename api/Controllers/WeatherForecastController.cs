@@ -35,7 +35,7 @@ namespace weather.Controllers
                 Humidity = 0.68,
                 Location = "Brisbane",
                 Status = rng.Next(0, 2) == 0 ? "Sunny" : "Cloudy",
-                UVIndex = 0,
+                UVIndex = 1,
                 Visibility = 4
             };
         }

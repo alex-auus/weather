@@ -12,6 +12,6 @@ namespace weather
         public string Status { get; set; }
         public double Humidity { get; set; }
         public double Visibility { get; set; }
-        public double UVIndex { get; set; }
+        public int UVIndex { get; set; }
     }
 }
