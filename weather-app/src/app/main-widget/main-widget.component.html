@@ -4,7 +4,8 @@
   </div>
   <div class="item">
     <div class="location">{{ weather?.location }}</div>
-    <div class="time">07:30 am - Saturday, 12 Sep '20</div>
+    <div class="time">{{ weather?.date | date: 'hh:mm a - EEEE, dd MMM yy' }}</div>
+    <!-- 07:30 am - Saturday, 12 Sep '20 -->
   </div>
   <div class="item">
     <mat-icon>{{ iconType(weather?.status) }}</mat-icon>
