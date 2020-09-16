@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,8 +10,18 @@ import { SecondaryWidgetComponent } from './secondary-widget/secondary-widget.co
 import { SecondaryWidgetItemComponent } from './secondary-widget-item/secondary-widget-item.component';
 
 @NgModule({
-  declarations: [AppComponent, MainWidgetComponent, SecondaryWidgetComponent, SecondaryWidgetItemComponent],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    MainWidgetComponent,
+    SecondaryWidgetComponent,
+    SecondaryWidgetItemComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

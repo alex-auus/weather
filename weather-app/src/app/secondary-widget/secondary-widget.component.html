@@ -1,3 +1,12 @@
-<app-secondary-widget-item></app-secondary-widget-item>
-<app-secondary-widget-item></app-secondary-widget-item>
-<app-secondary-widget-item></app-secondary-widget-item>
+<app-secondary-widget-item
+  title="Humidity"
+  [value]="weather?.humidity"
+></app-secondary-widget-item>
+<app-secondary-widget-item
+  title="Visibility"
+  [value]="weather?.visibility"
+></app-secondary-widget-item>
+<app-secondary-widget-item
+  title="UV Index"
+  [value]="weather?.uvIndex"
+></app-secondary-widget-item>

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Weather } from 'src/services/weather.model';
 
 @Component({
   selector: 'app-secondary-widget',
   templateUrl: './secondary-widget.component.html',
-  styleUrls: ['./secondary-widget.component.scss']
+  styleUrls: ['./secondary-widget.component.scss'],
 })
 export class SecondaryWidgetComponent implements OnInit {
+  @Input() weather: Weather;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

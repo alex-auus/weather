@@ -24,16 +24,20 @@ namespace weather.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public WeatherForecast Get(string latitude, string longitude)
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return new WeatherForecast
             {
-                Date = DateTime.Now.AddDays(index),
+                Date = DateTime.Now,
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Summary = Summaries[rng.Next(Summaries.Length)],
+                Humidity = 0.68,
+                Location = "Brisbanes",
+                Status = "Sunny",
+                UVIndex = 0,
+                Visibility = 4
+            };
         }
     }
 }
