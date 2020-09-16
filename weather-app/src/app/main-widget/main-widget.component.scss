@@ -5,8 +5,8 @@
 .item {
   display: flex;
   flex-direction: column;
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
   justify-content: center;
   align-items: center;
 }
@@ -18,9 +18,11 @@
 }
 
 .location {
+  margin-bottom: 5px;
   font-size: 3em;
 }
 
 .time {
+  margin-top: 5px;  
   color: lightgray;
 }
