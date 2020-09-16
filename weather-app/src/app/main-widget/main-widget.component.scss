@@ -1,0 +1,26 @@
+.temperature {
+  font-size: 7em;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  margin-right: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.location {
+  font-size: 3em;
+}
+
+.time {
+  color: lightgray;
+}
