@@ -33,7 +33,7 @@ namespace weather.Controllers
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)],
                 Humidity = 0.68,
-                Location = "Brisbanes",
+                Location = "Brisbane",
                 Status = "Sunny",
                 UVIndex = 0,
                 Visibility = 4
