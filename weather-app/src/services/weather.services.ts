@@ -6,7 +6,9 @@ import { Weather } from './weather.model';
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  getWeather() {
-    return this.http.get<Weather>('https://localhost:5001/WeatherForecast');
+  getWeather(position: Position) {
+    return this.http.get<Weather>(
+      `https://localhost:5001/WeatherForecast?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`
+    );
   }
 }

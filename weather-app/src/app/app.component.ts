@@ -13,8 +13,16 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.getWeather().subscribe((weather) => {
-      this.weatherData = weather;
-    });
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.weatherService.getWeather(position).subscribe((weather) => {
+          this.weatherData = weather;
+        });
+      },
+      () => {
+        alert('User not allowed');
+      },
+      { timeout: 10000 }
+    );
   }
 }

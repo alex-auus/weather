@@ -1,43 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Weather.ApplicationServices;
+using Weather.Models;
 
-namespace weather.Controllers
+namespace Weather.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IWeatherApplicationService weatherApplicationService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherApplicationService weatherApplicationService)
         {
             _logger = logger;
+            this.weatherApplicationService = weatherApplicationService;
         }
 
         [HttpGet]
-        public WeatherForecast Get(string latitude, string longitude)
+        public WeatherForecast Get(double latitude, double longitude)
         {
-            var rng = new Random();
-            return new WeatherForecast
-            {
-                Date = DateTime.Now,
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)],
-                Humidity = 0.68,
-                Location = "Brisbane",
-                Status = rng.Next(0, 2) == 0 ? "Sunny" : "Cloudy",
-                UVIndex = 1,
-                Visibility = 4
-            };
+            return weatherApplicationService.GetWeatherAtLocation(latitude, longitude);
         }
     }
 }
