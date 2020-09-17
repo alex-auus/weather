@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
         });
       },
       () => {
-        alert('User not allowed');
+        alert('User location not given');
       },
       { timeout: 10000 }
     );
